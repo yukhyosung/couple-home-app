@@ -1,0 +1,12 @@
+// firestore.rules
+// 부부 전용 앱이므로 읽기/쓰기 모두 허용 (간단한 MVP)
+// 나중에 Firebase Auth 연동 시 강화 가능
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
