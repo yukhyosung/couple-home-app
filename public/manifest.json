@@ -1,0 +1,17 @@
+{
+  "short_name": "우리집",
+  "name": "우리집 🏠 홈 보드",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ff8a8a",
+  "background_color": "#fff9f5",
+  "description": "우리 둘만의 따뜻한 홈 보드",
+  "orientation": "portrait"
+}
