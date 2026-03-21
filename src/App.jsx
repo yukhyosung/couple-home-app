@@ -6,10 +6,7 @@ import TodaySummary from "./components/TodaySummary";
 import ShoppingList from "./components/ShoppingList";
 import QuestList from "./components/QuestList";
 import RoutineList from "./components/RoutineList";
-import AIDailyBrief from "./components/AIDailyBrief";
 import BabyTracker from "./components/BabyTracker";
-import ChoreBalance from "./components/ChoreBalance";
-import MoodCheck from "./components/MoodCheck";
 import DayCounter from "./components/DayCounter";
 import RewardShop from "./components/RewardShop";
 import TodayMenu from "./components/TodayMenu";
@@ -25,14 +22,11 @@ function Dashboard() {
       <TodaySummary />
       <main className="dashboard">
         <DayCounter />
-        <AIDailyBrief />
-        <MoodCheck />
         <RewardShop />
         <TodayMenu />
         <ShoppingList />
         <QuestList />
         <RoutineList />
-        <ChoreBalance />
         <BabyTracker />
         <ActivityHistory />
       </main>
