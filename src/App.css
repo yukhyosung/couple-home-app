@@ -295,3 +295,140 @@ body {
   .dday-date-text { display:none; }
   .mood-buttons { grid-template-columns:repeat(2,1fr); }
 }
+
+/* ============ QUEST v2 - POINTS ============ */
+.quest-add-form { flex-direction: column; gap: 8px; }
+.difficulty-row { display: flex; gap: 6px; align-items: center; }
+.diff-btn {
+  width: 36px; height: 36px; font-size: 18px;
+  background: var(--bg); border: 1.5px solid var(--border);
+  border-radius: 10px; cursor: pointer; transition: all 0.15s;
+  display: flex; align-items: center; justify-content: center;
+}
+.diff-btn.active { border-color: var(--coral); background: var(--pink); transform: scale(1.1); }
+
+.default-quest-grid {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  padding: 12px 16px; border-bottom: 1px solid var(--border); background: var(--bg2);
+}
+.default-quest-btn {
+  font-family: var(--font-kr); font-size: 12px; font-weight: 600;
+  padding: 6px 12px; background: white; border: 1.5px solid var(--border);
+  border-radius: 20px; cursor: pointer; color: var(--text); transition: all 0.15s;
+  display: flex; align-items: center; gap: 4px;
+}
+.default-quest-btn:hover { border-color: var(--coral); background: var(--pink); }
+.default-pt { color: var(--coral); font-size: 11px; }
+
+.quest-diff-dot { font-size: 16px; flex-shrink: 0; }
+.quest-title-row { display: flex; align-items: center; gap: 6px; }
+.quest-pts { font-size: 11px; color: var(--coral); font-family: var(--font-mono); font-weight: 700; }
+
+@keyframes questComplete {
+  0% { background: white; }
+  30% { background: #fff0aa; }
+  100% { background: white; }
+}
+.quest-complete-anim { animation: questComplete 2s ease; }
+
+@keyframes pointBurst {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-30px) scale(1.3); }
+}
+.point-burst {
+  position: absolute; right: 48px;
+  font-size: 13px; font-weight: 700; color: var(--coral);
+  font-family: var(--font-mono); pointer-events: none;
+  animation: pointBurst 2s ease forwards;
+}
+.quest-row { position: relative; }
+
+/* ============ REWARD SHOP ============ */
+.reward-card { border-color: var(--peach); }
+
+.points-display {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px; background: linear-gradient(135deg, #fff5e1, #fff0f0);
+  border-bottom: 1.5px solid var(--border);
+}
+.points-me, .points-other { display: flex; align-items: center; gap: 10px; }
+.points-user-emoji { font-size: 32px; }
+.points-info { display: flex; flex-direction: column; }
+.points-name { font-size: 12px; color: var(--text-secondary); }
+.points-value { font-family: var(--font-mono); font-size: 22px; font-weight: 700; color: var(--coral); }
+.points-divider { font-size: 12px; color: var(--text-muted); font-family: var(--font-mono); }
+
+.reward-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 8px; padding: 14px 16px;
+}
+.reward-item {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 14px 8px; background: var(--bg);
+  border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+  cursor: pointer; transition: all 0.15s; font-family: var(--font-kr);
+}
+.reward-item:hover:not(.reward-locked) {
+  border-color: var(--coral); background: var(--pink);
+  transform: translateY(-2px); box-shadow: var(--shadow);
+}
+.reward-locked { opacity: 0.45; cursor: not-allowed; }
+.reward-success { background: #e8fff0 !important; border-color: var(--green) !important; }
+.reward-emoji { font-size: 28px; }
+.reward-label { font-size: 13px; font-weight: 600; color: var(--text); text-align: center; }
+.reward-cost { font-family: var(--font-mono); font-size: 12px; font-weight: 700; }
+.can-afford { color: var(--coral); }
+.cant-afford { color: var(--text-muted); }
+
+/* ============ TODAY MENU ============ */
+.meal-type-row {
+  display: flex; gap: 0;
+  border-bottom: 1.5px solid var(--border);
+}
+.meal-type-btn {
+  flex: 1; padding: 10px 8px; background: var(--bg2);
+  border: none; border-right: 1px solid var(--border);
+  font-family: var(--font-kr); font-size: 13px; font-weight: 600;
+  color: var(--text-secondary); cursor: pointer; transition: all 0.15s;
+}
+.meal-type-btn:last-child { border-right: none; }
+.meal-type-btn.active { background: white; color: var(--coral); }
+
+.menu-list { list-style: none; padding: 8px 0; }
+.menu-group { padding: 10px 16px; border-bottom: 1px solid var(--border); }
+.menu-group:last-child { border-bottom: none; }
+.menu-type-label { font-size: 12px; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 6px; }
+.menu-items { display: flex; flex-direction: column; gap: 4px; }
+.menu-item { display: flex; align-items: center; justify-content: space-between; }
+.menu-name { font-size: 16px; font-weight: 600; color: var(--text); }
+.menu-by { font-size: 12px; color: var(--text-muted); }
+
+.menu-history { padding: 8px 0; }
+.history-day { padding: 10px 16px; border-bottom: 1px solid var(--border); }
+.history-date { font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); margin-bottom: 6px; }
+.history-menu-item { display: flex; align-items: center; gap: 8px; padding: 3px 0; font-size: 13px; color: var(--text-secondary); }
+.history-menu-name { flex: 1; color: var(--text); font-weight: 500; }
+.history-menu-by { font-size: 16px; }
+
+/* ============ ACTIVITY HISTORY ============ */
+.history-list { list-style: none; padding: 6px 0; }
+.history-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 11px 16px; border-left: 3px solid transparent;
+  transition: background 0.1s;
+}
+.history-point  { border-left-color: var(--orange); }
+.history-reward { border-left-color: #a78bfa; }
+.history-quest  { border-left-color: var(--coral); }
+.history-menu   { border-left-color: var(--green); }
+
+.history-type-emoji { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+.history-content { flex: 1; display: flex; flex-direction: column; gap: 3px; }
+.history-main { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.history-user { font-size: 13px; font-weight: 700; color: var(--text); white-space: nowrap; }
+.history-reason { font-size: 13px; color: var(--text-secondary); }
+.history-meta { display: flex; align-items: center; gap: 8px; }
+.history-amount { font-family: var(--font-mono); font-size: 12px; font-weight: 700; }
+.history-amount.plus { color: var(--coral); }
+.history-amount.minus { color: #a78bfa; }
+.history-time { font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); }

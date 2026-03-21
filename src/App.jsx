@@ -1,5 +1,6 @@
 // src/App.jsx
 import { UserProvider, useUser } from "./lib/userContext";
+import { PointsProvider } from "./lib/pointsContext";
 import UserSelect from "./components/UserSelect";
 import TodaySummary from "./components/TodaySummary";
 import ShoppingList from "./components/ShoppingList";
@@ -10,6 +11,9 @@ import BabyTracker from "./components/BabyTracker";
 import ChoreBalance from "./components/ChoreBalance";
 import MoodCheck from "./components/MoodCheck";
 import DayCounter from "./components/DayCounter";
+import RewardShop from "./components/RewardShop";
+import TodayMenu from "./components/TodayMenu";
+import ActivityHistory from "./components/ActivityHistory";
 import "./App.css";
 
 function Dashboard() {
@@ -23,11 +27,14 @@ function Dashboard() {
         <DayCounter />
         <AIDailyBrief />
         <MoodCheck />
+        <RewardShop />
+        <TodayMenu />
         <ShoppingList />
         <QuestList />
         <RoutineList />
         <ChoreBalance />
         <BabyTracker />
+        <ActivityHistory />
       </main>
     </div>
   );
@@ -36,7 +43,9 @@ function Dashboard() {
 export default function App() {
   return (
     <UserProvider>
-      <Dashboard />
+      <PointsProvider>
+        <Dashboard />
+      </PointsProvider>
     </UserProvider>
   );
 }
