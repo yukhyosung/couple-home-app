@@ -1,18 +1,13 @@
-// src/lib/firebase.js
-// 🔥 Firebase 설정 파일
-// 아래 firebaseConfig를 본인의 Firebase 프로젝트 설정으로 교체하세요.
-// Firebase Console → 프로젝트 설정 → 앱 추가 → 웹에서 확인 가능합니다.
-
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID",
+  apiKey: "AIzaSyAV6WCS3qPGUrSjBVbsMNgwBknLgpcRBbk",
+  authDomain: "hyunsol-family.firebaseapp.com",
+  projectId: "hyunsol-family",
+  storageBucket: "hyunsol-family.firebasestorage.app",
+  messagingSenderId: "59832857399",
+  appId: "1:59832857399:web:589084d3e2422f1799e0b2",
 };
 
 const app = initializeApp(firebaseConfig);
